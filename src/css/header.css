@@ -1,0 +1,33 @@
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    background-color: blue;
+    color: white;
+    padding:16px;
+}
+
+.left ul, .right ul{
+    display: flex;
+    list-style-type: none;
+    gap:20px;
+    cursor: pointer;
+}
+
+
+@media (max-width:765px){
+    .container{
+        display: block;
+        height: 100vh;
+        width: 50vw;
+        background-color: black;
+    }
+
+    .left ul, .right ul{
+        display: block;
+        list-style-type: none;
+        gap:20px;
+        cursor: pointer;
+    }
+}
+
