@@ -2,36 +2,47 @@ import React, { useEffect, useState } from 'react'
 import Header from '../compont/Header'
 import Footer from '../compont/Footer'
 
-
+import "./todo.css"
+import TodoList from '../compont/TodoList'
 
 function Home() {
 
-  const [data,setData]=useState()
+  const [data, setData] = useState()
 
 
-  useEffect(()=>{
 
-    fetch('https://dummyjson.com/todos/1')
-    .then(res => res.json())
-    .then(data => setData(data)) 
-    .catch(error => console.error("Error fetching data:", error)); 
-  },[])
- 
+
+  useEffect(() => {
+    async function fetchdata() {
+      const fetchedData = await fetch('https://dummyjson.com/todos')
+
+      let jsonData = await fetchedData.json()
+      setData(jsonData.todos)
+    }
+
+    fetchdata()
+  }, [])
+
+
+
+
+  console.log("this is our data", data)
   return (
     <div>
-<Header/>
-this is home page
-{data &&<div>
-  <p>Task Id:{data?.id}</p>
-  <p>Task:{data?.todo}</p>
-  <p>Completed:{data?.completed?"Yes":"No"}</p>
-  <p>UserID:{data?.userId}</p>
-</div>  
-}
+      <Header />
+      this is home page
+      <div className='todo_container' >
+
+     
+      {data && data.map((el, index) => {
+        return <TodoList data={el}/>
+      })
+
+      }
+ </div>
 
 
-
-<Footer/>
+      <Footer />
 
     </div>
   )

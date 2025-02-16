@@ -1,0 +1,7 @@
+.todo_container{
+    display: flex;
+ 
+    border:2px solid;
+    width: 400px;
+    justify-content: space-between;
+}
