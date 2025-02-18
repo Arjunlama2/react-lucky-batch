@@ -1,7 +1,13 @@
 .todo_container{
-    display: flex;
- 
     border:2px solid;
-    width: 400px;
+    width: 600px;
     justify-content: space-between;
+    padding: 10px;
+}
+
+.todoList{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 16px;
+
 }
