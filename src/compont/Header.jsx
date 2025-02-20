@@ -25,7 +25,11 @@ function Header() {
                     <li>
                         Services
                     </li>
-                    <li><button>Login</button></li>
+                    <li>
+                        <Link to='/login'>
+                        <button>Login</button>
+                        </Link>
+                        </li>
                 </ul>
             </div>
         </div>

@@ -1,9 +1,8 @@
+@import "tailwindcss";
 
-*{
-    padding: 0;
-    margin: 0;
-}
-
+@theme {
+    --shadow-3xl: 5px 3px 35px rgba(0, 0, 0, 0.25); 
+  }
 
 
 .cardContainer{
